@@ -46,40 +46,6 @@ def get_mistral_response(input_text, no_words, blog_style):
     except Exception as e:
         return f"An error occurred: {e}"
 
-# Streamlit app configuration
-# st.set_page_config(
-#     page_title="Generate Blogs",
-#     page_icon='🤖',
-#     layout='centered',
-#     initial_sidebar_state='collapsed'
-# )
-
-# st.header("Generate Blogs 🤖")
-
-# input_text = st.text_input("Enter the Blog Topic")
-
-# # Creating two columns for additional fields
-# col1, col2 = st.columns([5, 5])
-
-# with col1:
-#     no_words = st.text_input('No of Words')
-# with col2:
-#     blog_style = st.selectbox('Writing the blog for',
-#                               ('Researchers', 'Data Scientist', 'Common People'), index=0)
-
-# submit = st.button("Generate")
-
-# # Final response
-# if submit:
-#     if not input_text or not no_words.isdigit():
-#         st.error("Please provide valid input text and number of words.")
-#     else:
-#         st.write(get_mistral_response(input_text, int(no_words), blog_style))
-
-import streamlit as st
-from langchain.prompts import PromptTemplate
-from mistralai import Mistral
-
 # Set page configuration
 st.set_page_config(
     page_title="Generate Blogs",
@@ -113,4 +79,4 @@ if submit:
     else:
         st.write(get_mistral_response(input_text, int(no_words), blog_style))
 
-    # Final response logic...
+    
